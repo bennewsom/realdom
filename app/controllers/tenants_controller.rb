@@ -1,7 +1,8 @@
+# The tenants controller handles all RESTful actions
+# for the Tenant resource
 class TenantsController < ApplicationController
+  # GET /tenants
   def index
-    byebug
     @tenants = Tenant.all
-    puts @tenants
   end
 end
