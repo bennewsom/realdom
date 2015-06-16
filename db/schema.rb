@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150611101517) do
+ActiveRecord::Schema.define(version: 20150616085932) do
+
+  create_table "landlords", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "gender",     null: false
+    t.date     "dob",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tenants", force: :cascade do |t|
-    t.string   "name"
-    t.string   "gender"
-    t.date     "dob"
+    t.string   "name",             null: false
+    t.string   "gender",           null: false
+    t.date     "dob",              null: false
     t.integer  "no_of_dependents"
     t.string   "occupation"
     t.float    "annual_income"
