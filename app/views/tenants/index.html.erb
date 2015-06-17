@@ -1,7 +1,35 @@
-<ul>
-  <% @tenants.each do |tenant| %>
-    <li>
-      <%= tenant.name %>: <%= tenant.gender %>
-    </li>
-  <% end %>
-</ul>
+<h1 class="page-header">Tenants</h1>
+<div class="table-responsive">
+  <table class="table table-striped" role="grid">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Date of birth</th>
+        <th>Occupation</th>
+        <th>Annual Income</th>
+        <th>Dependents</th>
+        <th class="text-center">Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tenants.each do |tenant| %>
+        <tr>
+          <td><%= tenant.id %></td>
+          <td><%= link_to tenant.name, tenant %></td>
+          <td><%= tenant.dob.to_formatted_s(:long) %></td>
+          <td><%= tenant.occupation %></td>
+          <td><%= tenant.annual_income %></td>
+          <td><%= tenant.no_of_dependents %></td>
+          <td class="text-center">
+            <% if tenant.gender == 'Female' %>
+              <i class="fa fa-female"></i>
+            <% else %>
+              <i class="fa fa-male"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
