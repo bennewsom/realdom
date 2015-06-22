@@ -2,7 +2,7 @@
   <%= render partial: 'shared/errors', object: @tenant.errors %>
   <div class="col-sm-6">
     <header>
-      <h1>Add New Tenant</h1>
+      <h1>Edit <%= @tenant.name %> Tenant</h1>
     </header>
     <%= form_for @tenant, html: { class: 'well' } do |f| %>
       <div class="form-group">
@@ -33,7 +33,7 @@
         <%= f.label :annual_income %>
         <%= f.text_field :annual_income, class: 'form-control' %>
       </div>
-      <%= f.submit 'Create Tenant', class: 'btn btn-primary' %>
+      <%= f.submit 'Edit Tenant', class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>

@@ -10,6 +10,7 @@
         <th>Annual Income</th>
         <th>Dependents</th>
         <th class="text-center">Gender</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -27,6 +28,9 @@
             <% else %>
               <i class="fa fa-male"></i>
             <% end %>
+          </td>
+          <td>
+            <%= link_to 'edit', edit_tenant_path(tenant) %>
           </td>
         </tr>
       <% end %>

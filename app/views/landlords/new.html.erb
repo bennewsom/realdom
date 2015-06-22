@@ -1,0 +1,23 @@
+<div class="row">
+  <%= render partial: 'shared/errors', object: @landlord.errors %>
+  <div class="col-sm-6">
+    <header>
+      <h1>Add New Landlord</h1>
+    </header>
+    <%= form_for @landlord, html: { class: 'well' } do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :gender %>
+        <%= f.text_field :gender, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :dob %>
+        <%= f.text_field :dob, class: 'form-control' %>
+      </div>
+      <%= f.submit 'Create Tenant', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

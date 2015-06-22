@@ -1,0 +1,30 @@
+<h1 class="page-header">Landlords</h1>
+<div class="table-responsive">
+  <table class="table table-striped" role="grid">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Date of birth</th>
+        <th class="text-center">Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @landlords.each do |landlord| %>
+        <tr>
+          <td><%= landlord.id %></td>
+          <td><%= link_to landlord.name, landlord %></td>
+          <td><%= landlord.dob.to_formatted_s(:long) %></td>
+          <td class="text-center">
+            <% if landlord.gender == 'Female' %>
+              <i class="fa fa-female"></i>
+            <% else %>
+              <i class="fa fa-male"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= link_to "Add Landlord", new_landlord_path, class: 'btn btn-primary' %>
