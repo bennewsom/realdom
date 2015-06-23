@@ -14,3 +14,15 @@ Landlord.create(name: 'George Cross', gender: 'Male', dob: Date.parse('1983-06-1
 Landlord.create(name: 'David Zavimbe', gender: 'Male', dob: Date.parse('1973-04-18'))
 Landlord.create(name: 'Tiffany Fox', gender: 'Female', dob: Date.parse('1993-07-16'))
 Landlord.create(name: 'Duke Thomas', gender: 'Male', dob: Date.parse('1996-11-01'))
+
+oz = Country.create(name: 'Australia')
+nz = Country.create(name: 'New Zealand')
+
+State.create(name: 'NSW', country: oz)
+State.create(name: 'QLD', country: oz)
+State.create(name: 'VIC', country: oz)
+State.create(name: 'NT', country: oz)
+State.create(name: 'WA', country: oz)
+State.create(name: 'SA', country: oz)
+State.create(name: 'TAS', country: oz)
+State.create(name: 'ACT', country: oz)
