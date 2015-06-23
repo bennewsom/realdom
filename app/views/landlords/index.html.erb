@@ -7,6 +7,7 @@
         <th>Name</th>
         <th>Date of birth</th>
         <th class="text-center">Gender</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@
               <i class="fa fa-male"></i>
             <% end %>
           </td>
+          <td><%= link_to 'edit', edit_landlord_path(landlord) %></td>
         </tr>
       <% end %>
     </tbody>
