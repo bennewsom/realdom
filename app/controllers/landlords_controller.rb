@@ -7,7 +7,7 @@ class LandlordsController < ApplicationController
 
   # GET /landlords/:id
   def show
-    @landlord = Landlord.find(params[:id])
+    get_landlord
   end
 
   # GET /landlords/new
@@ -17,12 +17,9 @@ class LandlordsController < ApplicationController
 
   # POST /landlords
   def create
-    landlord_params = params
-      .require(:landlord)
-      .permit(:name, :dob, :gender)
-    @landlord = Landlord.new(landlord_params)
+    @landlord = Landlord.new(white_listed_parameters)
     if @landlord.save
-      flash[:notice] = 'Landlord saved, yay baby!'
+      flash[:notice] = 'Landlord saved'
       redirect_to landlords_path
     else
       render :new
@@ -31,20 +28,34 @@ class LandlordsController < ApplicationController
 
   # GET /landlords/:id/edit
   def edit
-    @landlord = Landlord.find(params[:id])
+    get_landlord
   end
 
   # PUT /landlords/:id
   def update
-    landlord_params = params
-      .require(:landlord)
-      .permit(:name, :dob, :gender)
     @landlord = Landlord.find(params[:id])
-    if @landlord.update_attributes(landlord_params)
-      flash[:notice] = 'Landlord updated, yay baby!'
+    if @landlord.update_attributes(white_listed_parameters)
+      flash[:notice] = 'Landlord saved'
       redirect_to landlords_path
     else
       render :edit
     end
+  end
+
+  private
+
+  # Get's the tenant from the database, and redirects if unable to find one
+  def get_landlord
+    begin
+      @landlord = Landlord.find(params[:id])
+    rescue
+      redirect_to landlords_path
+    end
+  end
+
+  def white_listed_parameters
+    params
+      .require(:landlord)
+      .permit(:name, :dob, :gender)
   end
 end
