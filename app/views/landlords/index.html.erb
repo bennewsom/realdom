@@ -17,11 +17,7 @@
           <td><%= link_to landlord.name, landlord %></td>
           <td><%= landlord.dob.to_formatted_s(:long) %></td>
           <td class="text-center">
-            <% if landlord.gender == 'Female' %>
-              <i class="fa fa-female"></i>
-            <% else %>
-              <i class="fa fa-male"></i>
-            <% end %>
+              <i class="<%= get_gender_icon_class(landlord.gender) %>"></i>
           </td>
           <td><%= link_to 'edit', edit_landlord_path(landlord) %></td>
         </tr>

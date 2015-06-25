@@ -16,14 +16,14 @@ Landlord.create(name: 'Tiffany Fox', gender: 'Female', dob: Date.parse('1993-07-
 Landlord.create(name: 'Duke Thomas', gender: 'Male', dob: Date.parse('1996-11-01'))
 
 # TODO: Uncomment this after the Country and State class is designed and built
-# oz = Country.create(name: 'Australia')
-# nz = Country.create(name: 'New Zealand')
-#
-# State.create(name: 'NSW', country: oz)
-# State.create(name: 'QLD', country: oz)
-# State.create(name: 'VIC', country: oz)
-# State.create(name: 'NT', country: oz)
-# State.create(name: 'WA', country: oz)
-# State.create(name: 'SA', country: oz)
-# State.create(name: 'TAS', country: oz)
-# State.create(name: 'ACT', country: oz)
+oz = Country.create(name: 'Australia')
+nz = Country.create(name: 'New Zealand')
+
+State.create(name: 'NSW', country: oz)
+State.create(name: 'QLD', country: oz)
+State.create(name: 'VIC', country: oz)
+State.create(name: 'NT', country: oz)
+State.create(name: 'WA', country: oz)
+State.create(name: 'SA', country: oz)
+State.create(name: 'TAS', country: oz)
+State.create(name: 'ACT', country: oz)

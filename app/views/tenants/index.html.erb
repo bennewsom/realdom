@@ -23,11 +23,7 @@
           <td><%= tenant.annual_income %></td>
           <td><%= tenant.no_of_dependents %></td>
           <td class="text-center">
-            <% if tenant.gender == 'Female' %>
-              <i class="fa fa-female"></i>
-            <% else %>
-              <i class="fa fa-male"></i>
-            <% end %>
+              <i class="<%= get_gender_icon_class(tenant.gender) %>"></i>
           </td>
           <td>
             <%= link_to 'edit', edit_tenant_path(tenant) %>
