@@ -17,6 +17,7 @@ class LandlordsController < ApplicationController
 
   # POST /landlords
   def create
+    byebug
     @landlord = Landlord.new(white_listed_parameters)
     if @landlord.save
       flash[:notice] = 'Landlord saved'
