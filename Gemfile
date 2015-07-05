@@ -2,10 +2,6 @@ source 'https://rubygems.org'
 
 # Universally inclusive gems for the application
 gem 'bcrypt',       '~> 3.1.7'
-
-# Add a dependency on the bootstrap gem, but only with CSS support
-gem 'twitter-bootstrap-rails', '~> 3.2'
-
 gem 'coffee-rails', '~> 4.1'
 gem 'jbuilder',     '~> 2.0'
 gem 'jquery-rails', '~> 4.0'
@@ -14,7 +10,12 @@ gem 'rest-client',  '~> 1.8'
 gem 'sass-rails',   '~> 5.0'
 gem 'sqlite3',      '~> 1.3'
 gem 'turbolinks',   '~> 2.5'
+
+# Add a dependency on the bootstrap gem, but only with CSS support
+gem 'twitter-bootstrap-rails', '~> 3.2'
+
 gem 'uglifier',     '>= 1.3.0'
+gem 'will_paginate', '~> 3.0.6'
 
 gem 'sdoc', '~> 0.4', group: :doc
 

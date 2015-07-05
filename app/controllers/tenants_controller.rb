@@ -3,7 +3,7 @@
 class TenantsController < ApplicationController
   # GET /tenants
   def index
-    @tenants = Tenant.all
+    @tenants = Tenant.paginate(page: params[:page])
   end
 
   # GET /tenants/:id
