@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Universally inclusive gems for the application
 gem 'bcrypt',       '~> 3.1.7'
 gem 'coffee-rails', '~> 4.1'
+gem 'devise',       '~> 3.5'
 gem 'jbuilder',     '~> 2.0'
 gem 'jquery-rails', '~> 4.0'
 gem 'rails',        '~> 4.2'

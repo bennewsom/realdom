@@ -1,6 +1,10 @@
 # The tenants controller handles all RESTful actions
 # for the Tenant resource
-class TenantsController < ApplicationController
+class TenantsController < SessionsController
+
+  # Show and edit filter for tenants
+  before_action :get_tenant, only: [:show, :edit, :update]
+
   # GET /tenants
   def index
     @tenants = Tenant.paginate(page: params[:page])
@@ -8,7 +12,6 @@ class TenantsController < ApplicationController
 
   # GET /tenants/:id
   def show
-    get_tenant
   end
 
   # GET /tenants/new
@@ -29,12 +32,10 @@ class TenantsController < ApplicationController
 
   # GET /tenants/:id/edit
   def edit
-    get_tenant
   end
 
   # PUT /tenants
   def update
-    @tenant = Tenant.find(params[:id])
     if @tenant.update_attributes(white_listed_parameters)
       flash[:notice] = 'Tenant saved'
       redirect_to tenants_path

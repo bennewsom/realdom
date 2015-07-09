@@ -1,5 +1,9 @@
 # Contains the actions for the landlord resource
-class LandlordsController < ApplicationController
+class LandlordsController < SessionsController
+
+  # Tenants filters
+  before_action :get_landlord, only: [:show, :edit, :update]
+
   # GET /landlords
   def index
     @landlords = Landlord.all
@@ -7,7 +11,6 @@ class LandlordsController < ApplicationController
 
   # GET /landlords/:id
   def show
-    get_landlord
   end
 
   # GET /landlords/new
@@ -17,7 +20,6 @@ class LandlordsController < ApplicationController
 
   # POST /landlords
   def create
-    byebug
     @landlord = Landlord.new(white_listed_parameters)
     if @landlord.save
       flash[:notice] = 'Landlord saved'
@@ -29,12 +31,10 @@ class LandlordsController < ApplicationController
 
   # GET /landlords/:id/edit
   def edit
-    get_landlord
   end
 
   # PUT /landlords/:id
   def update
-    @landlord = Landlord.find(params[:id])
     if @landlord.update_attributes(white_listed_parameters)
       flash[:notice] = 'Landlord saved'
       redirect_to landlords_path
