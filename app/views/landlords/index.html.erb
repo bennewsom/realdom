@@ -19,7 +19,10 @@
           <td class="text-center">
               <i class="<%= get_gender_icon_class(landlord.gender) %>"></i>
           </td>
-          <td><%= link_to 'edit', edit_landlord_path(landlord) %></td>
+          <td>
+            <%= link_to 'edit', edit_landlord_path(landlord) %>&nbsp;
+            <%= link_to 'delete', landlord_path(landlord), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
         </tr>
       <% end %>
     </tbody>

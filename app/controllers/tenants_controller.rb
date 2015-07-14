@@ -3,7 +3,7 @@
 class TenantsController < SessionsController
 
   # Show and edit filter for tenants
-  before_action :get_tenant, only: [:show, :edit, :update]
+  before_action :get_tenant, only: [:show, :edit, :update, :destroy]
 
   # GET /tenants
   def index
@@ -42,6 +42,12 @@ class TenantsController < SessionsController
     else
       render :edit
     end
+  end
+
+  # DELETE /tenants/:id
+  def destroy
+    @tenant.destroy
+    redirect_to tenants_path
   end
 
   private

@@ -26,7 +26,8 @@
               <i class="<%= get_gender_icon_class(tenant.gender) %>"></i>
           </td>
           <td>
-            <%= link_to 'edit', edit_tenant_path(tenant) %>
+            <%= link_to 'edit', edit_tenant_path(tenant) %>&nbsp;
+            <%= link_to 'delete', tenant_path(tenant), method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
       <% end %>
