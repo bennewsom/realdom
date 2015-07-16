@@ -9,7 +9,6 @@ gem 'jquery-rails', '~> 4.0'
 gem 'rails',        '~> 4.2'
 gem 'rest-client',  '~> 1.8'
 gem 'sass-rails',   '~> 5.0'
-gem 'sqlite3',      '~> 1.3'
 gem 'turbolinks',   '~> 2.5'
 
 # Add a dependency on the bootstrap gem, but only with CSS support
@@ -22,6 +21,7 @@ gem 'sdoc', '~> 0.4', group: :doc
 
 group :development, :test do
   gem 'byebug'
+  gem 'sqlite3',      '~> 1.3'
   gem 'factory_girl_rails', '~> 4.2'
   gem 'web-console', '~> 2.0'
   gem 'rspec-rails', '~> 3.2'
