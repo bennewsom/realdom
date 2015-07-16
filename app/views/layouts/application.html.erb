@@ -16,14 +16,18 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Realty Dominion</a>
-        <% if user_signed_in? %>
-          <a class="nav navbar-nav navbar-right">
-            Currently signed in as <%= current_user.email %>
-          </a>
-        <% end %>
+        <%= link_to 'Realty Dominion', root_path, class: "navbar-brand" %>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <% if user_signed_in? %>
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= link_to 'Sign In', new_user_session_path %>
+            <% end %>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -33,11 +37,6 @@
         <ul class="nav nav-sidebar">
           <li><%= link_to 'Tenants', tenants_path %></li>
           <li><%= link_to 'Landlords', landlords_path %></li>
-          <% if user_signed_in? %>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></l1>
-          <% else %>
-            <li><%= link_to 'Sign In', new_user_session_path %></li>
-          <% end %>
         </ul>
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

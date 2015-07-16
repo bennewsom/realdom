@@ -8,6 +8,13 @@
 </head>
 <body>
   <%= render partial: 'shared/nav' %>
-  <%= render partial: 'layouts/devise/container' %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 main">
+        <%= render 'shared/flash' %>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
