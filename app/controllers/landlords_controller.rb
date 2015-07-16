@@ -6,7 +6,7 @@ class LandlordsController < SessionsController
 
   # GET /landlords
   def index
-    @landlords = Landlord.all
+    @landlords = Landlord.paginate(page: params[:page])
   end
 
   # GET /landlords/:id

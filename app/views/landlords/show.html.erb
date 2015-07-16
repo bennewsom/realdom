@@ -1,3 +1,23 @@
-<h1><%= @landlord.name %></h1>
-<h2>Gender: <%= @landlord.gender %></h2>
-<h3>Date of birth: <%= @landlord.dob %></h3>
+<div class="page-header">
+  <h1>
+    <%= @landlord.name %>
+    <small>
+      Gender: <%= @landlord.gender %>,
+      Date of birth: <%= @landlord.dob %>
+    </small>
+  </h1>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <header>
+      <h3>Properties</h3>
+    </header>
+    <!-- Insert missing template code here -->
+    <div class="list-group">
+      <%= link_to '', class: 'list-group-item' do %>
+        <h4 class="list-group-item-heading">Add Property No</h4>
+        <p class="list-group-item-text">Add address</p>
+      <% end %>
+    </div>
+  </div>
+</div>

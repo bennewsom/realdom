@@ -1,0 +1,29 @@
+<h1 class="page-header">Properties</h1>
+<div class="table-responsive">
+  <table class="table table-striped" role="grid">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>street_1</th>
+        <th>street_2</th>
+        <th>State</th>
+        <th>Postcode</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @properties.each do |property| %>
+        <tr>
+          <td><%= property.property_no %></td>
+          <td><%= property.street_1 %></td>
+          <td><%= property.street_2 %></td>
+          <td><%= property.state %></td>
+          <td><%= property.post_code %></td>
+          <td><%= property.state.country %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= will_paginate @propeerties %><br>

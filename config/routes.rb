@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   resources :tenants
   resources :landlords
 
- root to: "home#index"
+  resources :properties, only: [:index]
+
+  root to: "home#index"
 end

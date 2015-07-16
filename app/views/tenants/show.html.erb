@@ -1,3 +1,27 @@
-<h1><%= @tenant.name %></h1>
-<h2>Gender: <%= @tenant.gender %></h2>
-<h3>Date of birth: <%= @tenant.dob %></h3>
+<div class="page-header">
+  <h1>
+    <%= @tenant.name %>
+    <small>
+      Gender: <%= @tenant.gender %>,
+      Date of birth: <%= @tenant.dob %>
+    </small>
+  </h1>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <header>
+      <h3>Lease History</h3>
+    </header>
+    <!-- Insert missing template code here -->
+    <div class="list-group">
+      <%= link_to '', class: 'list-group-item active' do %>
+        <h4 class="list-group-item-heading">Current lease</h4>
+        <p class="list-group-item-text">Details about current lease</p>
+      <% end %>
+      <%= link_to '', class: 'list-group-item' do %>
+        <h4 class="list-group-item-heading">Old leases</h4>
+        <p class="list-group-item-text">Details about each lease</p>
+      <% end %>
+    </div>
+  </div>
+</div>
