@@ -3,6 +3,7 @@ class CreateLeases < ActiveRecord::Migration
     create_table :leases do |t|
       t.integer :agent_id, null: false
       t.integer :property_id, null: false
+      t.integer :tenant_id, null: false
       t.date :starts, null: false
       t.date :expires, null: false
 
@@ -10,5 +11,6 @@ class CreateLeases < ActiveRecord::Migration
     end
     add_index :leases, :agent_id
     add_index :leases, :property_id
+    add_index :leases, :tenant_id
   end
 end

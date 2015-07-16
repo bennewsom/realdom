@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 20150709103018) do
 
   create_table "agents", force: :cascade do |t|
     t.string   "staff_no",   limit: 32, null: false
+    t.string   "first_name"
+    t.string   "last_name"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
   end
@@ -36,6 +38,7 @@ ActiveRecord::Schema.define(version: 20150709103018) do
   create_table "leases", force: :cascade do |t|
     t.integer  "agent_id",    null: false
     t.integer  "property_id", null: false
+    t.integer  "tenant_id",   null: false
     t.date     "starts",      null: false
     t.date     "expires",     null: false
     t.datetime "created_at",  null: false
@@ -44,12 +47,22 @@ ActiveRecord::Schema.define(version: 20150709103018) do
 
   add_index "leases", ["agent_id"], name: "index_leases_on_agent_id"
   add_index "leases", ["property_id"], name: "index_leases_on_property_id"
+  add_index "leases", ["tenant_id"], name: "index_leases_on_tenant_id"
 
   create_table "properties", force: :cascade do |t|
     t.string   "property_no", limit: 32, null: false
+    t.string   "street_1",               null: false
+    t.string   "street_2"
+    t.string   "suburb"
+    t.string   "post_code"
+    t.integer  "state_id",               null: false
+    t.integer  "landlord_id",            null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  add_index "properties", ["landlord_id"], name: "index_properties_on_landlord_id"
+  add_index "properties", ["state_id"], name: "index_properties_on_state_id"
 
   create_table "states", force: :cascade do |t|
     t.string   "name",       limit: 512, null: false

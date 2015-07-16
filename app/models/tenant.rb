@@ -2,4 +2,6 @@
 # realestate agent
 class Tenant < ActiveRecord::Base
   validates_presence_of :name, :gender, :dob
+
+  has_many :leases
 end
